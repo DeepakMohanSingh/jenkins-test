@@ -1,0 +1,5 @@
+com/example/Store.class
+com/example/Application.class
+com/example/StoreRepository.class
+com/example/StoreService.class
+com/example/StoreController.class

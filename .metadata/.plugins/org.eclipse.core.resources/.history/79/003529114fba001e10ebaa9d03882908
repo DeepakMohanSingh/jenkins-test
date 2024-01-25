@@ -1,0 +1,12 @@
+package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Service {
+	private final Repository repository;
+	
+	@Autowired
+	public Service(Repository repository) {
+		this.repository = repository;
+	}
+}

@@ -1,0 +1,20 @@
+package com.example;
+
+import com.example.domain.Employee;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		Employee emp = new Employee();
+		emp.setEmpId(101);
+		emp.setName("John");
+		emp.setSsn("6036");
+		emp.setSalary(25000.58);
+		
+		System.out.println(emp.getEmpId());
+		System.out.println(emp.getName());
+		System.out.println(emp.getSsn());
+		System.out.println(emp.getSalary());
+	}
+
+}

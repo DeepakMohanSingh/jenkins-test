@@ -1,0 +1,34 @@
+package com.example.domain;
+
+public class Manager extends Employee {
+	private String deptName;
+	private Employee[] staff;
+	private int employeeCount = 0;
+
+	public Manager(int empId, String name, String ssn, double salary, String deptName) {
+		super(empId, name, ssn, salary);
+		this.deptName = deptName;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+	
+	public int findEmployee() {
+		
+	}
+	
+	public boolean addEmployee(Employee emp) {
+		
+	}
+	
+	public boolean removeEmployee(Employee emp) {
+		
+	}
+	
+	public void printStaffDetails() {
+		System.out.println("Manager: " + getName());
+		System.out.println("Staff list:");
+		
+	}
+}

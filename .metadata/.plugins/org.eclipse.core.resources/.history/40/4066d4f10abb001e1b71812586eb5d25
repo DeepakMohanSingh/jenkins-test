@@ -1,0 +1,70 @@
+package com.example;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@SpringBootApplication
+@EnableJpaRepositories("com.example.*")
+@ComponentScan(basePackages = { "com.example.*" })
+@EntityScan("com.example.*")
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Bean
+	public JpaRepository<Message, Long> messageRepository() {
+		return new MessageRepository();
+	}
+}
+
+class Message
+
+{
+
+	private Long id;
+	private String message;
+
+	public Long getId()
+
+	{
+		return id;
+	}
+
+	public
+
+			void
+
+			setId(Long id)
+
+	{
+		this.id = id;
+	}
+
+	public String
+
+			getMessage()
+
+	{
+		return message;
+	}
+
+	public
+
+			void
+
+			setMessage(String message)
+
+	{
+		this.message = message;
+	}
+}
+
+interface MessageRepository extends JpaRepository<Message, Long> {
+}

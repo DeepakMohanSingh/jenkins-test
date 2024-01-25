@@ -1,0 +1,1 @@
+insert into Store VALUES(1, 'testing1')

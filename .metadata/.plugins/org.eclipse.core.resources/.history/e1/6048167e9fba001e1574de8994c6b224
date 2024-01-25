@@ -1,0 +1,37 @@
+package com.example;
+
+import com.example.domain.Admin;
+import com.example.domain.Director;
+import com.example.domain.Employee;
+import com.example.domain.Engineer;
+import com.example.domain.Manager;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+		Employee emp = new Engineer(101, "Jane", "012", 120);
+		Employee manager = new Manager(102, "Barbara", "345", 250, "US Marketing");
+		Employee admin = new Admin(103, "Admin", "3543", 100);
+		Employee director = new Director(105, "Director", "667", 500, "Global Marketing", 1000000);
+		
+		printEmployee(emp);
+		System.out.println();
+		printEmployee(manager);
+		System.out.println();
+		printEmployee(admin);
+		System.out.println();
+		printEmployee(director);
+		
+		manager.setName("Manager");
+		manager.raiseSalary(50);
+		
+		printEmployee(manager);
+	}
+
+	static void printEmployee(Employee emp) {
+		System.out.println(emp.getEmpId());
+		System.out.println(emp.getName());
+		System.out.println(emp.getSsn());
+		System.out.println(emp.getSalary());
+	}
+}

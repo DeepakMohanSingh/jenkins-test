@@ -1,0 +1,49 @@
+package com.example.domain;
+
+public class Manager extends Employee {
+	private String deptName;
+	private Employee[] staff = new Employee[0];
+	private int employeeCount = 0;
+
+	public Manager(int empId, String name, String ssn, double salary, String deptName) {
+		super(empId, name, ssn, salary);
+		this.deptName = deptName;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public int findEmployee(Employee emp) {
+		for (int i = 0; i < staff.length; i++) {
+			if (staff[i].getEmpId() == emp.getEmpId()) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public boolean addEmployee(Employee emp) {
+		if (findEmployee(emp) == -1) {
+			employeeCount++;
+			Employee[] tempStaff = new Employee[employeeCount];
+			for (int i = 0; i < staff.length; i++) {
+				tempStaff[i] = staff[i];
+			}
+			tempStaff[employeeCount-1] = emp;
+			staff = tempStaff;
+			return true;
+		}
+		System.out.println("Employee already exists");
+		return false;
+	}
+
+
+	public void printStaffDetails() {
+		System.out.println("Manager: " + getName());
+		System.out.println("Staff list:");
+		for (int i = 0; i < staff.length; i++) {
+			System.out.println(staff[i].toString());
+		}
+	}
+}

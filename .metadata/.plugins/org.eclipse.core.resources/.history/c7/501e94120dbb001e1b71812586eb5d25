@@ -1,0 +1,22 @@
+package com.example;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StoreService {
+	
+	@Autowired
+	private final StoreRepository repository;
+	
+	@Autowired
+	public StoreService(StoreRepository repository) {
+		this.repository = repository;
+	}
+	
+	public List<Store> getAllContents(){
+		return repository.findAll();
+	}
+}

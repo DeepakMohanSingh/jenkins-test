@@ -1,0 +1,11 @@
+package com.example;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Store {
+	@Id
+	private int Id;
+	private String Content;
+}
